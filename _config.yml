@@ -79,5 +79,5 @@ theme: ad
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git 
-  repo: git@github.com:yunweichen/yunweichen.github.io
+  repo: git@git.dev.tencent.com:dtid_90bb41f1111aef3d/yunv.git
   branch: master
