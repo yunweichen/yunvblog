@@ -25,11 +25,11 @@ after_script:
 # Github Pages
 - git push --force --quiet "https://${TOKEN}@${GH_REF}" master:master 
 # Coding Pages
-#- git push --force --quiet "https://coding用户名:${CO_TOKEN}@${CO_REF}" master:master
+- git push --force --quiet "https://dtid_90bb41f1111aef3d:${CO_TOKEN}@${CO_REF}" master:master
 
 env:
  global:
    # Github Pages
    - GH_REF: git@github.com:yunweichen/yunweichen.github.io  #这里替换你的github仓库地址
    # Coding Pages
-   # - CO_REF: git.coding.net/bule/bule.coding.me.git  这里替换你的coding仓库地址
+   - CO_REF: git@git.dev.tencent.com:dtid_90bb41f1111aef3d/yunv.git  #这里替换你的coding仓库地址
