@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '8'
+- stable
 branches:
   only:
   - master
@@ -12,6 +12,7 @@ install:
 - npm install hexo-deployer-git --save
 - npm install
 script:
+- hexo init blog
 - hexo clean
 - hexo g
 - hexo d
