@@ -6,11 +6,11 @@ branches:
   - master
 before_install:
 - openssl aes-256-cbc -K $encrypted_44bc02d511c2_key -iv $encrypted_44bc02d511c2_iv
-  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
-- cp ssh_config ~/.ssh/config
+- cp .travis/ssh_config ~/.ssh/config
 - git config --global user.name 'yunweichen'
 - git config --global user.email 352298694@qq.com
 install:
