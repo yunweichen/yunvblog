@@ -1,8 +1,4 @@
-const VERSION = 'V1.0.1';
-
-const { motto } = window.AD_CONFIG;
-
-console.log(motto);
+const VERSION = 'v7'
 
 // 添加缓存
 self.addEventListener('install', event => {
