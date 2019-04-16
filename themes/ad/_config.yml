@@ -47,7 +47,7 @@ leancloud:
   appid: ooH98PkzMCnuGUH4dx6Qezlj-gzGzoHsz # 填写您的appid
   appkey: igjCb3vlkAmfCj8kMplXhVhJ # 填写您的appkey
   comment: false # 是否开启评论系统
-  count: true # 是否开启文章统计
+  count: false # 是否开启文章统计
 
 # 需要保证leancloud.count为true
 welcome: 
