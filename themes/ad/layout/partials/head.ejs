@@ -81,9 +81,7 @@
     <link rel="apple-touch-icon" href="<%- url_for(theme.favicon.touch_icon) %>">
   <% } %>
 
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <%- css(['/css/index.css', '/styles/components/highlight/highlight.css']) %>
+  <%- css(['/css/index.css', '/styles/components/highlight/highlight.css', '/css/font-awesome-4.7.0/css/font-awesome.min.css']) %>
 
   <% if (theme.custom_styles){ %>
     <%- css(theme.custom_styles) %>
