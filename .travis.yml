@@ -5,6 +5,12 @@ branches:
   only:
   - master
 before_install:
+- openssl aes-256-cbc -K $encrypted_44bc02d511c2_key -iv $encrypted_44bc02d511c2_iv
+  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
 - git config --global user.name 'yunweichen'
 - git config --global user.email 352298694@qq.com
 install:
@@ -16,20 +22,20 @@ install:
 script:
 - hexo clean
 - hexo g
-#- hexo d
-after_script:
-- cd ./public
-- git init
-- git add .
-- git commit -m "TravisCI 自动部署"
+- hexo d
+#after_script:
+#- cd ./public
+#- git init
+#- git add .
+#- git commit -m "TravisCI 自动部署"
 # Github Pages
-- git push --force --quiet "https://${TOKEN}@${GH_REF}" master:master 
+#- git push --force --quiet "https://${TOKEN}@${GH_REF}" master:master 
 # Coding Pages
-- git push --force --quiet "https://dtid_90bb41f1111aef3d:${CO_TOKEN}@${CO_REF}" master:master
+#- git push --force --quiet "https://dtid_90bb41f1111aef3d:${CO_TOKEN}@${CO_REF}" master:master
 
-env:
- global:
+#env:
+# global:
    # Github Pages
-   - GH_REF: git@github.com:yunweichen/yunweichen.github.io  #这里替换你的github仓库地址
+   #- GH_REF: git@github.com:yunweichen/yunweichen.github.io  #这里替换你的github仓库地址
    # Coding Pages
-   - CO_REF: git@git.dev.tencent.com:dtid_90bb41f1111aef3d/yunv.git  #这里替换你的coding仓库地址
+   #- CO_REF: git@git.dev.tencent.com:dtid_90bb41f1111aef3d/yunv.git  #这里替换你的coding仓库地址
